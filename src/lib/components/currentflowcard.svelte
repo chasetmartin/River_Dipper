@@ -23,6 +23,7 @@
             <h3 class="badge bg-gradient-to-br variant-gradient-primary-tertiary">Current Flow: </h3> 
             <h3 class="badge variant-filled-warning">{stream.values[0].value.slice(-1)[0].value}</h3>
             <h4 class="badge variant-soft">{stream.variable.variableDescription}</h4>
+            <!-- <h4 class="badge variant-soft">{stream.values[0].value.slice(-1)[0].dateTime}</h4> -->
         </div>
         <div class="p-4">
         <Accordion>
