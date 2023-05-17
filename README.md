@@ -1,2 +1,2 @@
-# SvelteKit_Skeleton_Playground
-A repository to house an application to demonstrate ✨ the Skelton UI framework 💀 and data loading 📀 in SvelteKit, a repository to build off of! 🔥⚙️🔨
+# Alcyon Recreation
+A repository to house an application for a user-fiendly river flow data display and forecasting, with user authentication and Rec.gov permit calendar availability
