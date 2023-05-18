@@ -42,9 +42,9 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<Navigation />
+		<Login />
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarRight">
-		<Login />
 	</svelte:fragment>
 	<svelte:fragment slot="pageHeader"></svelte:fragment>
 	<!-- Router Slot -->
