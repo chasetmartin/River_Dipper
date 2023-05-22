@@ -35,6 +35,7 @@
 				<strong class="text-xl p-6">ALCYON Rec</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				<Login />
 				<LightSwitch />
 				<Avatar class="w-10" initials="A" background="bg-primary-500" />
 			</svelte:fragment>
@@ -42,7 +43,7 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<Navigation />
-		<Login />
+		
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarRight">
 	</svelte:fragment>

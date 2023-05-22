@@ -38,7 +38,7 @@
 	</ul>
     <hr />
 	<div class="m-4 items-center justify-center flex">
-	<a href="/rivers" class="p-4 btn variant-filled text-xl" data-sveltekit-preload-data="hover">Click here for popular rivers!</a>
+	<a href="/rivers/popular" class="p-4 btn variant-filled text-xl" data-sveltekit-preload-data="hover">Click here for popular rivers!</a>
 	</div>
 </div>
 
