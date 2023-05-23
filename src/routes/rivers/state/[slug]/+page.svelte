@@ -2,8 +2,7 @@
 	import { onDestroy } from 'svelte';
     import type { PageData } from './$types';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
-	import { navigating } from '$app/stores';
-	import { InputChip, ProgressBar } from '@skeletonlabs/skeleton';
+	import { goto } from '$app/navigation';
 
     
     export let data: PageData;
@@ -30,13 +29,17 @@
 
     <div class="w-full text-token grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {#each $searchStore.filtered as site }
+            <button on:click={() => goto(`/rivers/state/${data.stateCode}/${site.sourceInfo.siteCode[0].value}`)}>
             <div class="card variant-ghost p-4">
-                <h3 class="text-xl">{site.sourceInfo.siteName.slice(0, -4).toUpperCase()}</h3>
+                <div class="p-2  rounded-md flex variant-filled-primary">
+                <h3 class="p-2 rounded-md flex-wrap no-underline">{site.sourceInfo.siteName.slice(0, -4).toUpperCase()}</h3>
+                </div>
                 <div class="p-2">
-                    <h4 class="badge bg-gradient-to-br variant-gradient-primary-tertiary">Current Flow: </h4> 
+                    <h4 class="badge bg-gradient-to-br variant-glass">Current Flow: </h4> 
                     <h4 class="badge variant-filled-warning">{site.values[0].value[0].value} CFS</h4>
                 </div>
             </div>
+        </button>
         {/each}
     </div>
 

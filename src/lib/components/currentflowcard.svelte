@@ -12,6 +12,10 @@
 // const lastIndex = chartdata.values[0].value.length - 1;
 // console.log(lastIndex);
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'decimal',
+  minimumFractionDigits: 0
+})
 
 </script>
 
@@ -21,13 +25,14 @@
         <h2 class="p-2">{stream.sourceInfo.siteName}</h2>
         <div class="p-2">
             <h3 class="badge bg-gradient-to-br variant-gradient-primary-tertiary">Current Flow: </h3> 
-            <h3 class="badge variant-filled-warning">{stream.values[0].value.slice(-1)[0].value}</h3>
+
+            <h3 class="badge variant-filled-warning">{formatter.format(stream.values[0].value.slice(-1)[0].value)}</h3>
             <h4 class="badge variant-soft">{stream.variable.variableDescription}</h4>
             <!-- <h4 class="badge variant-soft">{stream.values[0].value.slice(-1)[0].dateTime}</h4> -->
         </div>
         <div class="p-4">
         <Accordion>
-          <AccordionItem>
+          <AccordionItem open>
             <svelte:fragment slot="lead"><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 22 22"><g fill="none" stroke="currentColor"><path d="M3 3v18h18"></path><path d="m19 9l-5 5l-4-4l-3 3"></path></g></svg></svelte:fragment>
             <svelte:fragment slot="summary">Seven-Day Flow Chart</svelte:fragment>
             <svelte:fragment slot="content"><Sevendaychart {stream}/></svelte:fragment>

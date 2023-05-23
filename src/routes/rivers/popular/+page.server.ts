@@ -1,9 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { orGuages } from '$lib/helpers/gauges/OR';
 
 const popularSites = "14064500,14092500,14046500,14046000,14159000,14361500,14361500";
 
-const popularSites2 = "14046000,14046500,14361500,14092500,13333000,14377100"
+const popularSites2 = "09168730,09260050,09163500,09371010,13317000,14046000,14046500,14361500,14092500,13333000"
 
 export const load = (async () => {
     // const getNowStreamData = async () => {
