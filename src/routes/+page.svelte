@@ -23,7 +23,7 @@
 <div class="container">
     <h1 class="p-8">Welcome to Alcyon Recreation</h1>
     <hr class="!border-t-4" />
-    <h2 class="p-4">Your home for fast and customizable river flows and forecasting!</h2>
+    <h2 class="p-4">Your home for fast and customizable river flows, forecasting, and community!</h2>
     <hr class="!border-t-2" />
     <h3 class="p-4">Coming soon: </h3>
 	<ul class="list p-4 text-xl">
@@ -34,6 +34,10 @@
 		<li class="p-2">
 			<span><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></g></svg></span>
 			<span class="flex-auto">Custom dashboards built for your favorite places</span>
+		</li>
+		<li class="p-2">
+			<span><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+			<span class="flex-auto">Ad-free community forum</span>
 		</li>
 	</ul>
     <hr />

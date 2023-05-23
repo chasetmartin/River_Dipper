@@ -63,6 +63,7 @@ export const load = (({ params }) => {
 
         if (state) {
             return {
+                stateCode: state.code,
                 stateTitle: state.name,
                 stateStreams: getNowStreamData(params.slug)
             };
