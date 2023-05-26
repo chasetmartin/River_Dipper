@@ -13,6 +13,7 @@
 	function drawerOpen(): void {
 		drawerStore.open();
 	}
+
 </script>
 
 <Drawer>
@@ -37,7 +38,7 @@
 			<svelte:fragment slot="trail">
 				<Login />
 				<LightSwitch />
-				<Avatar class="w-10" initials="A" background="bg-primary-500" />
+				<Avatar class="w-9.5" initials="A" background="bg-primary-500" />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
