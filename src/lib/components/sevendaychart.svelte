@@ -5,6 +5,8 @@
 
         export let stream: any;
         const data2 = stream.values[0].value;
+
+        console.log(data2);
         
         const marginTop = 40; // the top margin, in pixels
         const marginRight = 0; // the right margin, in pixels
@@ -23,8 +25,8 @@
         const showDots = true; // whether dots should be displayed
         const dotsFilled = true; // whether dots should be filled or outlined
         const r = 1; // (fixed) radius of dots, in pixels
-        const strokeWidth = 2; // stroke width of line, in pixels
-        const strokeOpacity = 0.8; // stroke opacity of line
+        const strokeWidth = 3.5; // stroke width of line, in pixels
+        const strokeOpacity = 0.95; // stroke opacity of line
         const tooltipBackground = 'white'; // background color of tooltip
         const tooltipTextColor = 'black'; // text color of tooltip
         const strokeLinecap = 'round'; // stroke line cap of the line
@@ -44,21 +46,25 @@
     
         let x: string, 
         y: string, 
-        dotInfo: null | [any, number, MouseEvent] = null,
+        dotInfo: null | [any, number, MouseEvent],
         lines: string[], 
         xVals: number[] = [], 
         yVals: number[] = [], 
-        points: { x: number; y: number; color: number }[] = [], subsets: any[] = [], colorVals: number[] = [];
+        points: { x: number; y: number; color: string }[] = [], subsets: any[] = [], colorVals: number[] = [];
+
+        $: {
+          console.log(dotInfo);
+        }
             
         // For a single set of data
         if (!('data' in data2[0])) {
           x = Object.keys(data2[0])[2];
           y = Object.keys(data2[0])[0];
-          xVals = data2.map((el) => parseDate(el[x]));
+          xVals = data2.map((el: { [x: string]: string; }) => parseDate(el[x]));
         //   xVals = data2.map((el) => el[x]);
-          yVals = data2.map((el) => el[y]);
-          colorVals = data2.map((el) => 0);
-          points = data2.map((el) => ({
+          yVals = data2.map((el: { [x: string]: any; }) => el[y]);
+          colorVals = data2.map((el: any) => 0);
+          points = data2.map((el: { [x: string]: any; }) => ({
             x: el[x],
             y: el[y],
             color: 0
@@ -68,7 +74,7 @@
         else {
           x = Object.keys(data2[0]?.data2[0])[2];
           y = Object.keys(data2[0]?.data2[0])[0];
-          data2.forEach((subset, i) => {
+          data2.forEach((subset: { data2: any[]; id: any; }, i: number) => {
           subset.data2.forEach((coordinate) => {
             xVals.push(coordinate[x]);
             yVals.push(coordinate[y]);
@@ -85,7 +91,7 @@
         }
       
         const I = range(xVals.length);
-        const gaps = (d, i) => !isNaN(xVals[i]) && !isNaN(yVals[i]);
+        const gaps = (d: any, i: any) => !isNaN(xVals[i]) && !isNaN(yVals[i]);
         const cleanData = points.map(gaps);
       
         const xDomain = [xVals[0], xVals[xVals.length - 1]];
@@ -109,7 +115,7 @@
         }
       
         const pointsScaled = points.map((el) => [xScale(el.x), yScale(el.y), el.color]);
-        const delaunayGrid = Delaunay.from(pointsScaled);
+        const delaunayGrid = Delaunay.from(pointsScaled);  
         const voronoiGrid = delaunayGrid.voronoi([0, 0, width, height]);
         
         const  xTicks = xScale.ticks(xScalefactor);
@@ -117,6 +123,9 @@
         // const  xTicksFormatted = xTicks.map((el) => el.getFullYear());
         const  yTicks = niceY.ticks(yScalefactor);
     
+        function handleDotInfo(point, index, event) {
+    dotInfo = [point, index, event];
+  }
         //-------End Graph Code ---------
     </script>
 
@@ -182,18 +191,20 @@
                         {/each}
                         <text x={width - marginLeft - marginRight - 40} y={marginBottom}>{xLabel}</text>
                       </g>
-                  
+                
                       {#each pointsScaled as point, i}
                         <path
                           stroke="none"
                           fill-opacity="0"
                           class="voronoi-cell"
                           d={voronoiGrid.renderCell(i)}
-                          on:mouseover="{(e) => dotInfo = [point, i, e] }"
-                          on:focus="{(e) => dotInfo = [point, i, e] }"
+                          on:mouseover="{(e) => handleDotInfo(point, i, e)}"
+                          on:focus="{(e) => handleDotInfo(point, i, e)}"
                         ></path>
                       {/each}
+
                     </svg>
+                
                   </div>
                   <!-- Tooltip -->
                   {#if dotInfo}
