@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Currentflowcard from '$lib/components/currentflowcard.svelte';
-import type { PageData } from './$types';
+	import Singleflowcard from '$lib/components/singleflowcard.svelte';
+    import type { PageData } from './$types';
     
     export let data: PageData;
 
@@ -9,7 +9,7 @@ import type { PageData } from './$types';
 </script>
 
 <div class="w-full text-token grid grid-cols-1 gap-8">
-    <Currentflowcard {chartdata} />
+    <Singleflowcard {chartdata} />
 </div>
 
 <!-- <div class="w-full text-token grid grid-cols-1 gap-8">

@@ -13,6 +13,9 @@
     <h4 class="p-4"> We will be offering a subscription service to help keep the lights on and the ads off!
     </h4>
         <hr class="!border-t-1" />
-    <h4 class="p-4">We will also be donating a portion of our proceeds to river conservation efforts.</h4>
+    <h4 class="p-4">We will be donating a portion of any proceeds to river conservation efforts.</h4>
+    <hr />
+    <hr class="!border-t-1" />
+    <h4 class="p-4">We respect your privacy. We do not sell your data, and we only collect what's necessary to make sure you're a real human and to improve your user experience.</h4>
     <hr />
 </div>

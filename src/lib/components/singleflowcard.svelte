@@ -6,7 +6,7 @@
 
 	import Sevendaychart from "$lib/components/sevendaychart.svelte";
 	import { Accordion, AccordionItem } from "@skeletonlabs/skeleton";
-	import Combinedbarline from "./combinedbarline.svelte";
+	import Singlesitebarline from "./singlesitebarline.svelte";
 
   export let chartdata: any;
 // console.log(chartdata[0].values[0].value);
@@ -26,13 +26,12 @@ const formatter = new Intl.NumberFormat('en-US', {
       <div class="p-4">
         <h3 class="p-4 rounded-md flex variant-filled-primary">{stream.sourceInfo.siteName}</h3>
       </div>
-        <div class="p-2">
+        <!-- <div class="p-2">
             <h4 class="badge bg-gradient-to-br variant-glass pl-4">Current Flow: </h4> 
-
             <h3 class="badge variant-filled-warning">{formatter.format(stream.values[0].value.slice(-1)[0].value)} CFS</h3>
-            <!-- <h4 class="badge variant-soft">{stream.variable.variableDescription}</h4> -->
-            <!-- <h4 class="badge variant-soft">{stream.values[0].value.slice(-1)[0].dateTime}</h4> -->
-        </div>
+            <h4 class="badge variant-soft">{stream.variable.variableDescription}</h4>
+            <h4 class="badge variant-soft">{stream.values[0].value.slice(-1)[0].dateTime}</h4>
+        </div> -->
         <div class="">
         <Accordion>
           <AccordionItem open>
@@ -40,7 +39,7 @@ const formatter = new Intl.NumberFormat('en-US', {
             <svelte:fragment slot="summary">Flow Chart</svelte:fragment>
             <svelte:fragment slot="content">
               
-                <Combinedbarline {stream} />
+                <Singlesitebarline {stream} />
             
             </svelte:fragment>
           </AccordionItem>
