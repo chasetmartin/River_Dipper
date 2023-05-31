@@ -13,16 +13,16 @@
     const suggestedMax = maxValue + maxValue * 0.04;
     
     const formatDateTime = (dateTime: string | number | Date) => {
-  const options = {
-    month: 'numeric',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
+    const options = {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+    };
+    const date = new Date(dateTime);
+    return date.toLocaleString('en-US', options);
   };
-  const date = new Date(dateTime);
-  return date.toLocaleString('en-US', options);
-};
     
     const formatDate = (index: number) => {
       const dateTime = chartData.labels[index];
@@ -93,20 +93,6 @@
                                 enabled: true,
                             },
                             mode: 'x',
-                //             onZoom: ({ chart }: { chart: Chart }) => {
-                //                 const { minIndex, maxIndex } = chart.scales.x as any;
-                //                 const tickFrequency = 7;
-
-                //                 // Update the x-axis tick labels
-                //                 chart.options.scales.x.ticks.callback = (value: string, index: number, values: string[]) => {
-                //                 if (index % tickFrequency === 0 && index >= minIndex && index <= maxIndex) {
-                //                     return formatDate(index);
-                //                 }
-                //                 return '';
-                //                 };
-
-                //                 chart.update();
-                //         },
                     },
                 },
             },
@@ -128,15 +114,8 @@
                             // For a category axis, the val is the index so the lookup via getLabelForValue is needed
                             callback: function(val, index) {
                                 // Hide every 2nd tick label
-                                return index % 3 === 0 ? this.getLabelForValue(val) : '';
+                                return index % 2 === 0 ? this.getLabelForValue(val) : '';
                             },
-                        // callback: (value, index, values) => {
-                        //     // Show label for every nth tick
-                        //     if (index % 7 === 0) {
-                        //     return formatDate(index);
-                        //     }
-                        //     return '';
-                        // },
                         },
                     },
                     y: {
@@ -162,6 +141,7 @@
       }
     }
     
+    let sevendays = false;
     
       </script>
       
@@ -169,6 +149,12 @@
         <div class="container items-center justify-center flex pb-2">
             <p class="pr-4">Zoom with scroll wheel or click and drag!</p>
             <button class="btn-sm variant-filled" on:click={resetZoomChart}>Reset Zoom</button>
+        </div>
+        <div class="container items-center justify-center flex pb-2">
+          <p class="pr-4">7 day chart:</p>
+            <label for="7 days">
+              <input type="checkbox" bind:checked={sevendays}>
+            </label>
         </div>
         <div class="pt-6 bg-slate-200 p-2 rounded-md">
         <canvas class="tooltip" bind:this={lineChartElement} />

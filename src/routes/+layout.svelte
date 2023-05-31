@@ -9,14 +9,25 @@
 	import Navigation from '$lib/components/navigation.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Login from '$lib/components/login.svelte';
+	import { onMount } from 'svelte';
 
 	function drawerOpen(): void {
 		drawerStore.open();
 	}
+	let isMobile = false;
 
+	function checkMobile() {
+	isMobile = window.innerWidth < 768; // Adjust the breakpoint as needed
+	}
+	onMount(() => {
+		checkMobile();
+	});
+
+	$: containerPaddingClass = isMobile ? 'p-1' : 'p-10';
 </script>
 
 <Drawer>
+	<Login />
 	<Navigation />
 </Drawer>
 
@@ -33,16 +44,16 @@
 						</svg>
 					</span>
 				</button>
-				<strong class="text-xl p-6">ALCYON Rec</strong>
+				<strong class="text-xl p-6">River.Dipper</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<Login />
 				<LightSwitch />
-				<Avatar class="w-9.5" initials="A" background="bg-primary-500" />
+				<Avatar class="w-9" initials="A" background="bg-primary-500" />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
+		<Login />
 		<Navigation />
 		
 	</svelte:fragment>
@@ -50,7 +61,7 @@
 	</svelte:fragment>
 	<svelte:fragment slot="pageHeader"></svelte:fragment>
 	<!-- Router Slot -->
-	<div class="container p-10 mx-auto">
+	<div class="container {containerPaddingClass} mx-auto">
 		<slot />
 	</div>
 	<!-- ---- / ---- -->

@@ -9,4 +9,7 @@
     <hr class="!border-t-2" />
     <h3 class="p-4">You'll be able to customize and save your own dashboards so that your favorites are one click away.</h3>
     <hr />
+    <hr class="!border-t-2" />
+    <h4 class="p-4">Your account will give you access to the forum to connect with other river lovers.</h4>
+    <hr />
 </div>
