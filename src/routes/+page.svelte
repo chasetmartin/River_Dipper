@@ -21,7 +21,7 @@
 </div> -->
 
 <div class="container">
-    <h1 class="p-8">Welcome to Alcyon Recreation</h1>
+    <h1 class="p-8">Welcome to River.Dipper</h1>
     <hr class="!border-t-4" />
     <h2 class="p-4">Your home for fast and customizable river flows, forecasting, and community!</h2>
     <hr class="!border-t-2" />
