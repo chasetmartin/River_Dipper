@@ -21,7 +21,7 @@
 </div> -->
 
 <div class="container">
-    <h1 class="p-8">Welcome to River.Dipper</h1>
+    <h1 class="p-8">Welcome to River Dipper</h1>
     <hr class="!border-t-4" />
     <h2 class="p-4">Your home for fast and customizable river flows, forecasting, and community!</h2>
     <hr class="!border-t-2" />
@@ -37,7 +37,7 @@
 		</li>
 		<li class="p-2">
 			<span><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
-			<span class="flex-auto">Ad-free community forum</span>
+			<span class="flex-auto">Ad-free community forum: connect with real humans in the river community!</span>
 		</li>
 	</ul>
     <hr />

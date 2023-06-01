@@ -4,7 +4,6 @@
 // export let streamflow: any;
 // console.log(streamflow);
 
-	import Sevendaychart from "$lib/components/sevendaychart.svelte";
 	import { Accordion, AccordionItem } from "@skeletonlabs/skeleton";
 	import Singlesitebarline from "./singlesitebarline.svelte";
 

@@ -44,7 +44,7 @@
 						</svg>
 					</span>
 				</button>
-				<strong class="text-xl p-6">River.Dipper</strong>
+				<strong class="text-xl p-6">River Dipper</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<LightSwitch />
