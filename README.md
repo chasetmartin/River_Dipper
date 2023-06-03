@@ -6,4 +6,10 @@ https://river.dipper.pro
 ## A project of Dipper Recreation
 Check out all of our offerings here: https://dipper.pro
 
-## Built using SvelteKit, Skeleton UI, Typescript, Supabase, Prisma, & Stripe
+## Built using:
+* SvelteKit
+* Skeleton UI
+* Typescript
+* Supabase
+* Prisma
+* Stripe
