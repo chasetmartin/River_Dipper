@@ -10,6 +10,8 @@
 	import Footer from '$lib/components/footer.svelte';
 	import Login from '$lib/components/login.svelte';
 	import { onMount } from 'svelte';
+	import Dipperlogo from '$lib/components/dipperlogo.svelte';
+	import Namelogo from '$lib/components/namelogo.svelte';
 
 	function drawerOpen(): void {
 		drawerStore.open();
@@ -24,6 +26,7 @@
 	});
 
 	$: containerPaddingClass = isMobile ? 'p-1' : 'p-10';
+	$: slotdisplay = isMobile ? 'collapse' : '';
 </script>
 
 <Drawer>
@@ -33,9 +36,9 @@
 
 <AppShell slotSidebarLeft="w-0 md:w-52 bg-surface-500/10">
 	<svelte:fragment slot="header">
-		<AppBar>
+		<AppBar padding="pr-12 pl-12" gap="g-0" >
 			<svelte:fragment slot="lead">
-				<button class="md:hidden btn btn-sm mr-4">
+				<button class="md:hidden btn btn-sm mr-3">
 					<span>
 						<svg viewBox="0 0 100 80" class="fill-token w-4 h-4" on:click={drawerOpen} on:keypress={drawerOpen}>
 							<rect width="100" height="20" />
@@ -44,11 +47,14 @@
 						</svg>
 					</span>
 				</button>
-				<strong class="text-xl p-6">River Dipper</strong>
+				<Namelogo />
+				<h1 class="hidetitle">River Dipper Application</h1>
+
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<LightSwitch />
-				<Avatar class="w-9" initials="A" background="bg-primary-500" />
+				<div class="{slotdisplay}">
+				<Dipperlogo />
+				</div>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
@@ -61,12 +67,29 @@
 	</svelte:fragment>
 	<svelte:fragment slot="pageHeader"></svelte:fragment>
 	<!-- Router Slot -->
-	<div class="container {containerPaddingClass} mx-auto">
+	<div class="container {containerPaddingClass} mx-auto ">
 		<slot />
 	</div>
 	<!-- ---- / ---- -->
 	<svelte:fragment slot="pageFooter"></svelte:fragment>
 	<svelte:fragment slot="footer">
-		<Footer />
+		<AppBar padding="p-0 pl-8 pr-8">
+			<svelte:fragment slot="lead">
+				<Footer />
+			</svelte:fragment>
+			<svelte:fragment slot="trail">
+				<p class="pr-2">LightSwitch:</p>
+				<LightSwitch rounded="rounded-xl" width="w-12"/>
+			</svelte:fragment>
+		</AppBar>
+		<!-- <Footer />
+		<LightSwitch rounded="rounded-xl" width="w-12"/> -->
 	</svelte:fragment>
 </AppShell>
+
+<style>
+	.hidetitle {
+		opacity: 0;
+	}
+
+</style>
