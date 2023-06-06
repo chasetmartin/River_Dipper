@@ -3,6 +3,7 @@
     import type { PageData } from './$types';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { goto } from '$app/navigation';
+	import Seostategauges from '$lib/components/seostategauges.svelte';
 
     
     export let data: PageData;
@@ -18,6 +19,13 @@
     });
 
 </script>
+
+    <Seostategauges
+    title="{data.stateTitle} River Gauges" 
+    description="Flows and forecasts for rivers in {data.stateTitle}." 
+    keywords="river, flow, guage, {data.stateTitle}, CFS, cubic feet per second, discharge, graph, hydrograph real-time, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, data, beta" 
+    type="WebPage" 
+    />
 
     <div class="w-full text-token grid grid-cols-1 md:grid-cols-2">
         <h1 class="p-2 items-center justify-center flex">{data.stateTitle}</h1>
@@ -35,7 +43,7 @@
 
     <div class="w-full text-token grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {#each $searchStore.filtered as site }
-            <button on:click={() => goto(`/rivers/state/${data.stateCode}/${site.sourceInfo.siteCode[0].value}`)}>
+            <button on:click={() => goto(`/rivers/${data.stateCode}/${site.sourceInfo.siteCode[0].value}`)}>
             <div class="card variant-ghost p-4">
                 <div class="p-2  rounded-md flex variant-filled-primary">
                 <h3 class="p-2 rounded-md flex-wrap no-underline">{site.sourceInfo.siteName.slice(0, -4).toUpperCase()}</h3>

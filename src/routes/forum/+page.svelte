@@ -1,6 +1,14 @@
 <script lang="ts">
+	import Seomainnav from "$lib/components/seomainnav.svelte";
+
 
 </script>
+<Seomainnav 
+title="Forum" 
+description="We are building an ad-free community forum for river lovers to connect and share their experiences." 
+keywords="river, flow, guage, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, community, forum, questions, reviews, answers, beta"
+type="WebPage" 
+/>
 <div class="container">
     <h1 class="p-8">Forum</h1>
     <hr class="!border-t-4" />
@@ -22,7 +30,7 @@
             </li>
             <li>
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><path d="m15 12l-8.5 8.5c-.83.83-2.17.83-3 0c0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9m5.64 6L22 10.64"></path><path d="m20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"></path></g></svg></span>
-                <span>Boat Building beta</span>
+                <span>Boat building beta</span>
             </li>
         </ul>
     </h4>

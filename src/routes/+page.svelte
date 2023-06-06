@@ -1,8 +1,15 @@
 <script lang="ts">
 	import Newslettersignup from "$lib/components/Newslettersignup.svelte";
-
+	import Seohomepage from "$lib/components/seohomepage.svelte";
 
 </script>
+<Seohomepage 
+	title="River Dipper" 
+	description="Your home for fast and customizable river flows, forecasting, and community!" 
+	keywords="river, flow, forecast, community, whitewater, kayaking, rafting, canoeing, paddleboarding, SUP, forum, guage, hydrograph"
+	type="WebSite"
+	canonical="https://river.dipper.pro"
+	/>
 
 <div class="container logobackground">
 	<div class="p-4 textbackground">

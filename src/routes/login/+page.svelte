@@ -1,9 +1,16 @@
 <script lang="ts">
 	import Newslettersignup from "$lib/components/Newslettersignup.svelte";
+	import Seomainnav from "$lib/components/seomainnav.svelte";
 
   
 </script>
 
+<Seomainnav 
+title="Login" 
+description="Your account will give you access to the forum to connect with other river lovers." 
+keywords="river, flow, guage, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, community, forum, questions, reviews, answers, beta, account, login"
+type="WebPage" 
+/>
 <div class="container">
     <h1 class="p-8">Login</h1>
     <hr class="!border-t-4" />
