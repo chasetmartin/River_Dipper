@@ -5,13 +5,16 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { AppShell, AppBar, Avatar, Drawer, drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Avatar, Drawer, drawerStore, LightSwitch, ProgressBar, ProgressRadial } from '@skeletonlabs/skeleton';
 	import Navigation from '$lib/components/navigation.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Login from '$lib/components/login.svelte';
 	import { onMount } from 'svelte';
 	import Dipperlogo from '$lib/components/dipperlogo.svelte';
 	import Namelogo from '$lib/components/namelogo.svelte';
+
+	//Navigating Progress
+	import {navigating} from '$app/stores';
 
 	function drawerOpen(): void {
 		drawerStore.open();
@@ -35,6 +38,9 @@
 </Drawer>
 
 <AppShell slotSidebarLeft="w-0 md:w-52 bg-surface-500/10">
+	{#if $navigating}
+		<ProgressBar label="Progress Bar" />
+	{/if}
 	<svelte:fragment slot="header">
 		<AppBar padding="pr-12 pl-12" gap="g-0" >
 			<svelte:fragment slot="lead">
@@ -49,7 +55,6 @@
 				</button>
 				<Namelogo />
 				<h1 class="hidetitle">River Dipper Application</h1>
-
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="{slotdisplay}">
@@ -91,5 +96,6 @@
 	.hidetitle {
 		opacity: 0;
 	}
+
 
 </style>
