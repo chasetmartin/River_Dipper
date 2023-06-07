@@ -4,6 +4,7 @@
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { goto } from '$app/navigation';
 	import Seostategauges from '$lib/components/seostategauges.svelte';
+    import { formatter } from '$lib/helpers/formatter';
 
     
     export let data: PageData;
@@ -26,6 +27,12 @@
     keywords="river, flow, guage, {data.stateTitle}, CFS, cubic feet per second, discharge, graph, hydrograph real-time, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, data, beta" 
     type="WebPage" 
     />
+
+    <!-- <ul>
+        {#each data.stateStreams.timeSeries as site }
+            <li>&#123;"site": "{site.sourceInfo.siteName}", "sitecode": "{site.sourceInfo.siteCode[0].value}", "statecd": "{site.sourceInfo.siteProperty[2].value}"&#125;,</li>
+        {/each}
+    </ul> -->
 
     <div class="w-full text-token grid grid-cols-1 md:grid-cols-2">
         <h1 class="p-2 items-center justify-center flex">{data.stateTitle}</h1>
@@ -50,7 +57,7 @@
                 </div>
                 <div class="p-2">
                     <h4 class="badge bg-gradient-to-br variant-glass">Current Flow: </h4> 
-                    <h4 class="badge variant-filled-warning">{site.values[0].value[0].value} CFS</h4>
+                    <h4 class="badge variant-filled-warning">{formatter.format(site.values[0].value[0].value)} CFS</h4>
                 </div>
             </div>
         </button>
