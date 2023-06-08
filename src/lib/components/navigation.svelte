@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Accordion, AccordionItem, drawerStore } from "@skeletonlabs/skeleton";
     import { states } from "$lib/helpers/states";
+    import { goto } from '$app/navigation';
 
     function drawerClose(): void {
         drawerStore.close();
@@ -16,9 +17,9 @@
         <hr>
         <li>
             <Accordion>
-                <AccordionItem open>
+                <AccordionItem>
                     <svelte:fragment slot="lead"></svelte:fragment>
-                    <svelte:fragment slot="summary">Rivers</svelte:fragment>
+                    <svelte:fragment slot="summary"><a href="/rivers">Rivers</a></svelte:fragment>
                     <svelte:fragment slot="content">
                         <a href="/rivers/popular" data-sveltekit-preload-data on:click={drawerClose}>Popular Flows</a>
                         <Accordion>
