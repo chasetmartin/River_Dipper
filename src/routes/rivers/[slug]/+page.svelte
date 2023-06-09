@@ -5,6 +5,7 @@
 	import { goto } from '$app/navigation';
 	import Seostategauges from '$lib/components/seostategauges.svelte';
     import { formatter } from '$lib/helpers/formatter';
+    import { states } from '$lib/helpers/states';
 
     
     export let data: PageData;
@@ -19,6 +20,8 @@
         unsubscribe();
     });
 
+    // $: stateabr = states.find((state) => state.id === data.stateStreams.timeSeries[0].sourceInfo.siteProperty[2].value);
+
 </script>
 
     <Seostategauges
@@ -27,10 +30,10 @@
     keywords="river, flow, guage, {data.stateTitle}, CFS, cubic feet per second, discharge, graph, hydrograph real-time, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, data, beta" 
     type="WebPage" 
     />
-
-    <!-- <ul>
+<!-- 
+    <ul>
         {#each data.stateStreams.timeSeries as site }
-            <li>&#123;"site": "{site.sourceInfo.siteName}", "sitecode": "{site.sourceInfo.siteCode[0].value}", "statecd": "{site.sourceInfo.siteProperty[2].value}"&#125;,</li>
+            <li>&#123;"site": "{site.sourceInfo.siteName}", "sitecode": "{site.sourceInfo.siteCode[0].value}", "statecd": "{site.sourceInfo.siteProperty[2].value}", "stateab": "{stateabr?.code}"&#125;,</li>
         {/each}
     </ul> -->
 

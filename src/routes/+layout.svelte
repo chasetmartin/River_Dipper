@@ -10,8 +10,7 @@
 	import Footer from '$lib/components/footer.svelte';
 	import Login from '$lib/components/login.svelte';
 	import { onMount } from 'svelte';
-	import Dipperlogo from '$lib/components/dipperlogo.svelte';
-	import Namelogo from '$lib/components/namelogo.svelte';
+	import { goto } from '$app/navigation';
 
 	//Navigating Progress
 	import {navigating} from '$app/stores';
@@ -53,12 +52,12 @@
 						</svg>
 					</span>
 				</button>
-				<Namelogo />
+				<img on:click={() => goto(`/`)} on:keypress={() => goto(`/`)} src="NameLogoDarkSmall.svg" alt="RiverDipper" class="namelogo">
 				<h1 class="hidetitle">River Dipper Application</h1>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<div class="{slotdisplay}">
-				<Dipperlogo />
+					<img class="logo" src="DipperLogo.svg" alt="Dipper Logo">
 				</div>
 			</svelte:fragment>
 		</AppBar>
@@ -96,6 +95,12 @@
 	.hidetitle {
 		opacity: 0;
 	}
-
+	.logo {
+        width: 7rem;
+        height: auto;
+    }
+	.namelogo {
+      cursor: pointer;
+    }
 
 </style>

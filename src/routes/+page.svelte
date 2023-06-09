@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Newslettersignup from "$lib/components/Newslettersignup.svelte";
+	import Riversearch from "$lib/components/riversearch.svelte";
 	import Seohomepage from "$lib/components/seohomepage.svelte";
 
 </script>
@@ -18,6 +19,8 @@
 	</div>
     <hr class="!border-t-4" />
     <h2 class="p-4 ">Your home for fast and customizable river flows, forecasting, and community!</h2>
+	<hr class="!border-t-4" />
+		<Riversearch />
 	<hr class="!border-t-4" />
     <h3 class="p-4 ">Sign up for our newsletter to learn about the latest available features!</h3>
 	<div class="">
@@ -40,9 +43,9 @@
 		</li>
 	</ul>
     <hr />
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-3/6 p-8">
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-8">
 		<h3 class="p-2">Click to view the TOP 10 most popular USA rivers!</h3>
-		<a href="/rivers/popular" class="btn variant-filled-tertiary text-xl" data-sveltekit-preload-data="hover">Popular Rivers</a>
+		<a href="/rivers/popular" class="btn variant-filled-tertiary text-xl whitespace-normal" data-sveltekit-preload-data="hover">Popular Rivers</a>
 	</div>
 	</div>
 </div>
