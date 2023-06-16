@@ -3,5 +3,5 @@
 
 </script>
 <div class="p-4">
-    &#169; Dipper Recreation | 2023
+    &#169; <a href="https://dipper.pro">Dipper.pro</a> | 2023
 </div>

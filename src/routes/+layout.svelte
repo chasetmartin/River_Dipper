@@ -11,6 +11,7 @@
 	import Login from '$lib/components/login.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { fade } from 'svelte/transition';
 
 	//Navigating Progress
 	import {navigating} from '$app/stores';

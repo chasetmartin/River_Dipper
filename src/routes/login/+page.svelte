@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Newslettersignup from "$lib/components/Newslettersignup.svelte";
 	import Seomainnav from "$lib/components/seomainnav.svelte";
+    import { fade } from 'svelte/transition';
 
   
 </script>
@@ -11,7 +12,7 @@ description="Your account will give you access to the forum to connect with othe
 keywords="river, flow, guage, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, community, forum, questions, reviews, answers, beta, account, login"
 type="WebPage" 
 />
-<div class="container">
+<div in:fade={{duration:600}} class="container">
     <h1 class="p-8">Login</h1>
     <hr class="!border-t-4" />
     <h2 class="p-4">This functionality is coming soon!</h2>
