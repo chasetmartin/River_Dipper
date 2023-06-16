@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seomainnav from "$lib/components/seomainnav.svelte";
+    import { fade } from 'svelte/transition';
 
 
 </script>
@@ -9,7 +10,7 @@ description="We are building an ad-free community forum for river lovers to conn
 keywords="river, flow, guage, whitewater, kayaking, rafting, canoeing, paddleboarding, sup, paddle, water, recreation, outdoors, adventure, community, forum, questions, reviews, answers, beta"
 type="WebPage" 
 />
-<div class="container">
+<div in:fade={{duration:600}} class="container">
     <h1 class="p-8">Forum</h1>
     <hr class="!border-t-4" />
     <h2 class="p-4">Coming Soon: connect with other river lovers and build community!</h2>

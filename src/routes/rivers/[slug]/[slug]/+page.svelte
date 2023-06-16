@@ -2,6 +2,8 @@
 	import Seoindividualgauges from '$lib/components/seoindividualgauges.svelte';
     import Singleflowcard from '$lib/components/singleflowcard.svelte';
     import type { PageData } from './$types';
+    import { fade } from 'svelte/transition';
+    import { slide } from 'svelte/transition';
     
     export let data: PageData;
 
@@ -16,7 +18,7 @@
     statecode="{data.indStream.timeSeries[0].sourceInfo.siteProperty[2].value}"
 />
 
-<div class="w-full text-token grid grid-cols-1 gap-8">
+<div in:fade={{duration:600}} class="w-full text-token grid grid-cols-1 gap-8">
     <Singleflowcard {chartdata} />
 </div>
 

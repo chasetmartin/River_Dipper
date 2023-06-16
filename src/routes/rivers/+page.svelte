@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Riversearch from "$lib/components/riversearch.svelte";
 import Seomainnav from "$lib/components/seomainnav.svelte";
+import { fade } from 'svelte/transition';
 
 </script>
 <Seomainnav 
@@ -10,7 +11,7 @@ keywords="river, flow, guage, CFS, cubic feet per second, graph, real-time, whit
 type="WebPage" 
 />
 
-<div class="container">
+<div in:fade={{duration:600}} class="container">
     <h1 class="p-8">River Flows and Forecasts</h1>
     <hr class="!border-t-4" />
     <h2 class="p-4 flex items-center">

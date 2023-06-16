@@ -6,6 +6,7 @@
 	import Seostategauges from '$lib/components/seostategauges.svelte';
     import { formatter } from '$lib/helpers/formatter';
     import { states } from '$lib/helpers/states';
+    import { fade } from 'svelte/transition';
 
     
     export let data: PageData;
@@ -36,7 +37,7 @@
             <li>&#123;"site": "{site.sourceInfo.siteName}", "sitecode": "{site.sourceInfo.siteCode[0].value}", "statecd": "{site.sourceInfo.siteProperty[2].value}", "stateab": "{stateabr?.code}"&#125;,</li>
         {/each}
     </ul> -->
-
+<div in:fade={{duration:600}}>
     <div class="w-full text-token grid grid-cols-1 md:grid-cols-2">
         <h1 class="p-2 items-center justify-center flex">{data.stateTitle}</h1>
         <label class="label items-center justify-center flex p-8">
@@ -66,6 +67,7 @@
         </button>
         {/each}
     </div>
+</div>
 
     <style>
         .card {

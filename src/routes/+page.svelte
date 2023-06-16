@@ -2,6 +2,7 @@
 	import Newslettersignup from "$lib/components/Newslettersignup.svelte";
 	import Riversearch from "$lib/components/riversearch.svelte";
 	import Seohomepage from "$lib/components/seohomepage.svelte";
+	import { fade } from "svelte/transition";
 
 </script>
 <Seohomepage 
@@ -12,7 +13,7 @@
 	canonical="https://river.dipper.pro"
 	/>
 
-<div class="container logobackground">
+<div in:fade={{duration:600}} class="container logobackground">
 	<div class="p-4 textbackground">
 	<div class="container w-full mx-auto flex">
 		<h1 class="p-4">Welcome to River Dipper</h1>
